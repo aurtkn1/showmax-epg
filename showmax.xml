@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tv generator-info-name="Showmax Automatic EPG" generator-info-url="https://www.showmax.com.tr/">
+  <channel id="showmax.tr">
+    <display-name>Showmax HD</display-name>
+  </channel>
+  <programme start="20261102070000 +0300" stop="20261102090000 +0300" channel="showmax.tr">
+    <title lang="tr">Gelin Evi</title>
+  </programme>
+  <programme start="20261102090000 +0300" stop="20261102113000 +0300" channel="showmax.tr">
+    <title lang="tr">Gelsin Hayat Bildiği Gibi</title>
+  </programme>
+  <programme start="20261102113000 +0300" stop="20261102140000 +0300" channel="showmax.tr">
+    <title lang="tr">Aşk Laftan Anlamaz</title>
+  </programme>
+  <programme start="20261102140000 +0300" stop="20261102163000 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261102163000 +0300" stop="20261102194500 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261102194500 +0300" stop="20261102231500 +0300" channel="showmax.tr">
+    <title lang="tr">Gelsin Hayat Bildiği Gibi</title>
+  </programme>
+  <programme start="20261102231500 +0300" stop="20261103020000 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261103020000 +0300" stop="20261103041500 +0300" channel="showmax.tr">
+    <title lang="tr">Aşk Laftan Anlamaz</title>
+  </programme>
+  <programme start="20261103041500 +0300" stop="20261103070000 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261103070000 +0300" stop="20261103090000 +0300" channel="showmax.tr">
+    <title lang="tr">Gelin Evi</title>
+  </programme>
+  <programme start="20261103090000 +0300" stop="20261103113000 +0300" channel="showmax.tr">
+    <title lang="tr">Gelsin Hayat Bildiği Gibi</title>
+  </programme>
+  <programme start="20261103113000 +0300" stop="20261103140000 +0300" channel="showmax.tr">
+    <title lang="tr">Aşk Laftan Anlamaz</title>
+  </programme>
+  <programme start="20261103140000 +0300" stop="20261103163000 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261103163000 +0300" stop="20261103194500 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261103194500 +0300" stop="20261103231500 +0300" channel="showmax.tr">
+    <title lang="tr">Gelsin Hayat Bildiği Gibi</title>
+  </programme>
+  <programme start="20261103231500 +0300" stop="20261104020000 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261104020000 +0300" stop="20261104041500 +0300" channel="showmax.tr">
+    <title lang="tr">Aşk Laftan Anlamaz</title>
+  </programme>
+  <programme start="20261104041500 +0300" stop="20261104070000 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261104070000 +0300" stop="20261104090000 +0300" channel="showmax.tr">
+    <title lang="tr">Gelin Evi</title>
+  </programme>
+  <programme start="20261104090000 +0300" stop="20261104113000 +0300" channel="showmax.tr">
+    <title lang="tr">Gelsin Hayat Bildiği Gibi</title>
+  </programme>
+  <programme start="20261104113000 +0300" stop="20261104140000 +0300" channel="showmax.tr">
+    <title lang="tr">Aşk Laftan Anlamaz</title>
+  </programme>
+  <programme start="20261104140000 +0300" stop="20261104163000 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261104163000 +0300" stop="20261104194500 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261104194500 +0300" stop="20261104231500 +0300" channel="showmax.tr">
+    <title lang="tr">Gelsin Hayat Bildiği Gibi</title>
+  </programme>
+  <programme start="20261104231500 +0300" stop="20261105020000 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261105020000 +0300" stop="20261105041500 +0300" channel="showmax.tr">
+    <title lang="tr">Aşk Laftan Anlamaz</title>
+  </programme>
+  <programme start="20261105041500 +0300" stop="20261105070000 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261105070000 +0300" stop="20261105090000 +0300" channel="showmax.tr">
+    <title lang="tr">Gelin Evi</title>
+  </programme>
+  <programme start="20261105090000 +0300" stop="20261105113000 +0300" channel="showmax.tr">
+    <title lang="tr">Gelsin Hayat Bildiği Gibi</title>
+  </programme>
+  <programme start="20261105113000 +0300" stop="20261105140000 +0300" channel="showmax.tr">
+    <title lang="tr">Aşk Laftan Anlamaz</title>
+  </programme>
+  <programme start="20261105140000 +0300" stop="20261105163000 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261105163000 +0300" stop="20261105194500 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261105194500 +0300" stop="20261105231500 +0300" channel="showmax.tr">
+    <title lang="tr">Siyah Kalp</title>
+  </programme>
+  <programme start="20261105231500 +0300" stop="20261106020000 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261106020000 +0300" stop="20261106041500 +0300" channel="showmax.tr">
+    <title lang="tr">Aşk Laftan Anlamaz</title>
+  </programme>
+  <programme start="20261106041500 +0300" stop="20261106070000 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261106070000 +0300" stop="20261106090000 +0300" channel="showmax.tr">
+    <title lang="tr">Gelin Evi</title>
+  </programme>
+  <programme start="20261106090000 +0300" stop="20261106113000 +0300" channel="showmax.tr">
+    <title lang="tr">Siyah Kalp</title>
+  </programme>
+  <programme start="20261106113000 +0300" stop="20261106140000 +0300" channel="showmax.tr">
+    <title lang="tr">Aşk Laftan Anlamaz</title>
+  </programme>
+  <programme start="20261106140000 +0300" stop="20261106163000 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261106163000 +0300" stop="20261106194500 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261106194500 +0300" stop="20261106231500 +0300" channel="showmax.tr">
+    <title lang="tr">Siyah Kalp</title>
+  </programme>
+  <programme start="20261106231500 +0300" stop="20261107020000 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261107020000 +0300" stop="20261107041500 +0300" channel="showmax.tr">
+    <title lang="tr">Aşk Laftan Anlamaz</title>
+  </programme>
+  <programme start="20261107041500 +0300" stop="20261107070000 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261107070000 +0300" stop="20261107103000 +0300" channel="showmax.tr">
+    <title lang="tr">Siyah Kalp</title>
+  </programme>
+  <programme start="20261107103000 +0300" stop="20261107133000 +0300" channel="showmax.tr">
+    <title lang="tr">Rüya Gibi</title>
+  </programme>
+  <programme start="20261107133000 +0300" stop="20261107161500 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261107161500 +0300" stop="20261107200000 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261107200000 +0300" stop="20261107231500 +0300" channel="showmax.tr">
+    <title lang="tr">Rüya Gibi</title>
+  </programme>
+  <programme start="20261107231500 +0300" stop="20261108020000 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261108020000 +0300" stop="20261108041500 +0300" channel="showmax.tr">
+    <title lang="tr">Aşk Laftan Anlamaz</title>
+  </programme>
+  <programme start="20261108041500 +0300" stop="20261108070000 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261108070000 +0300" stop="20261108103000 +0300" channel="showmax.tr">
+    <title lang="tr">Siyah Kalp</title>
+  </programme>
+  <programme start="20261108103000 +0300" stop="20261108133000 +0300" channel="showmax.tr">
+    <title lang="tr">Rüya Gibi</title>
+  </programme>
+  <programme start="20261108133000 +0300" stop="20261108161500 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261108161500 +0300" stop="20261108200000 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+  <programme start="20261108200000 +0300" stop="20261108231500 +0300" channel="showmax.tr">
+    <title lang="tr">İstanbul Sokakları</title>
+  </programme>
+  <programme start="20261108231500 +0300" stop="20261109020000 +0300" channel="showmax.tr">
+    <title lang="tr">Fatih Harbiye</title>
+  </programme>
+  <programme start="20261109020000 +0300" stop="20261109041500 +0300" channel="showmax.tr">
+    <title lang="tr">Aşk Laftan Anlamaz</title>
+  </programme>
+  <programme start="20261109041500 +0300" stop="20261110070000 +0300" channel="showmax.tr">
+    <title lang="tr">Yeni Gelin</title>
+  </programme>
+</tv>
