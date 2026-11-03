@@ -6,42 +6,46 @@ const URL = "https://www.showmax.com.tr/yayin-akisi/";
 async function inspectShowmax() {
   try {
     const response = await axios.get(URL, {
-      timeout: 30000,
       headers: {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36"
-      }
+        "User-Agent": "Mozilla/5.0"
+      },
+      timeout: 30000
     });
 
     const html = response.data;
 
-    console.log("SHOWMAX HTML DETAYLI İNCELEME");
-    console.log("HTML UZUNLUĞU:", html.length);
+    const tabs = [...html.matchAll(/tab-content/gi)];
 
-    const regex = /<span[^>]*class="[^"]*text-xl[^"]*"[^>]*>[\s\S]*?<\/span>/gi;
-    const matches = [...html.matchAll(regex)];
+    console.log("SHOWMAX YAYIN GÜNLERİ");
+    console.log("BULUNAN TAB SAYISI:", tabs.length);
 
-    console.log("PROGRAM SAYISI:", matches.length);
+    for (let i = 0; i < tabs.length; i++) {
+      const start = tabs[i].index;
+      const end = i + 1 < tabs.length
+        ? tabs[i + 1].index
+        : html.length;
 
-    matches.slice(0, 5).forEach((match, index) => {
-      const start = Math.max(0, match.index - 1200);
-      const end = Math.min(html.length, match.index + 1500);
+      const section = html.substring(start, end);
+      const before = html.substring(Math.max(0, start - 1800), start);
 
-      console.log("\n========== PROGRAM", index + 1, "==========");
-      console.log(html.substring(start, end));
-    });
+      console.log("\n================================");
+      console.log("YAYIN BÖLÜMÜ:", i + 1);
+      console.log("================================");
 
-    console.log("\n========== TARİH VE SAAT İPUÇLARI ==========");
+      console.log("BÖLÜM ÖNCESİ:");
+      console.log(before.slice(-1000));
 
-    const keywords = ["2026-", "date", "time", "07:00", "09:00", "11:30"];
+      const regex = /<span[^>]*>(\d{1,2}:\d{2})<\/span>\s*<span[^>]*>([\s\S]*?)<\/span>/gi;
 
-    keywords.forEach(keyword => {
-      const index = html.indexOf(keyword);
+      const programs = [...section.matchAll(regex)];
 
-      if (index !== -1) {
-        console.log("\nİPUCU:", keyword);
-        console.log(html.substring(Math.max(0, index - 300), index + 500));
-      }
-    });
+      console.log("PROGRAM SAYISI:", programs.length);
+
+      programs.forEach(program => {
+        const name = program[2].replace(/<[^>]*>/g, "").trim();
+        console.log(program[1], "-", name);
+      });
+    }
 
   } catch (error) {
     console.error("HATA:", error.message);
