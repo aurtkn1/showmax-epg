@@ -1,49 +1,50 @@
 
 const axios = require("axios");
 
-const API_URL =
-  "https://api.gleams.dev/api/customers/inline-modules?key=gl_5S5955D3NN7YGWH3&h=www.showmax.com.tr&path=%2Fyayin-akisi";
+const URL = "https://www.showmax.com.tr/yayin-akisi/";
 
-async function testShowmaxAPI() {
+async function testShowmax() {
   console.log("==================================");
-  console.log("SHOWMAX EPG - API TESTİ");
+  console.log("SHOWMAX WEB SAYFASI TESTİ");
   console.log("==================================");
 
   try {
-    const response = await axios.get(API_URL, {
+    const response = await axios.get(URL, {
       timeout: 30000,
       headers: {
-        "User-Agent": "Mozilla/5.0",
-        "Accept": "application/json, text/plain, */*"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml"
       }
     });
 
-    console.log("HTTP DURUM:", response.status);
-    console.log("İÇERİK TÜRÜ:", response.headers["content-type"]);
-    console.log("----------------------------------");
-    console.log("API VERİSİ:");
+    const html = response.data;
 
-    if (typeof response.data === "object") {
-      console.log(JSON.stringify(response.data, null, 2));
+    console.log("HTTP DURUM:", response.status);
+    console.log("HTML UZUNLUĞU:", html.length);
+    console.log("SAYFA BAŞLIĞI:");
+
+    const title = html.match(/<title[^>]*>(.*?)<\/title>/is);
+    console.log(title ? title[1] : "Bulunamadı");
+
+    console.log("----------------------------------");
+    console.log("YAYIN AKIŞI VERİLERİ:");
+
+    const matches = html.match(/.{0,100}(?:Gelin Evi|Gelsin Hayat Bildiği Gibi|Aşk Laftan Anlamaz|Fatih Harbiye|Yeni Gelin|Siyah Kalp|Rüya Gibi).{0,150}/gis);
+
+    if (matches) {
+      matches.slice(0, 30).forEach(item => console.log(item));
+      console.log("TOPLAM EŞLEŞME:", matches.length);
     } else {
-      console.log(response.data);
+      console.log("Program isimleri HTML içinde bulunamadı.");
     }
 
     console.log("----------------------------------");
-    console.log("API TESTİ BAŞARILI");
+    console.log("WEB SAYFASI TESTİ BAŞARILI");
 
   } catch (error) {
-    console.error("API HATASI:");
-
-    if (error.response) {
-      console.error("HTTP DURUM:", error.response.status);
-      console.error("YANIT:", error.response.data);
-    } else {
-      console.error(error.message);
-    }
-
+    console.error("HATA:", error.message);
     process.exitCode = 1;
   }
 }
 
-testShowmaxAPI();
+testShowmax();
