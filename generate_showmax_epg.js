@@ -3,43 +3,45 @@ const axios = require("axios");
 
 const URL = "https://www.showmax.com.tr/yayin-akisi/";
 
-async function testShowmax() {
-  console.log("==================================");
-  console.log("SHOWMAX WEB SAYFASI TESTİ");
-  console.log("==================================");
-
+async function inspectShowmax() {
   try {
     const response = await axios.get(URL, {
       timeout: 30000,
       headers: {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36"
       }
     });
 
     const html = response.data;
 
-    console.log("HTTP DURUM:", response.status);
+    console.log("SHOWMAX HTML DETAYLI İNCELEME");
     console.log("HTML UZUNLUĞU:", html.length);
-    console.log("SAYFA BAŞLIĞI:");
 
-    const title = html.match(/<title[^>]*>(.*?)<\/title>/is);
-    console.log(title ? title[1] : "Bulunamadı");
+    const regex = /<span[^>]*class="[^"]*text-xl[^"]*"[^>]*>[\s\S]*?<\/span>/gi;
+    const matches = [...html.matchAll(regex)];
 
-    console.log("----------------------------------");
-    console.log("YAYIN AKIŞI VERİLERİ:");
+    console.log("PROGRAM SAYISI:", matches.length);
 
-    const matches = html.match(/.{0,100}(?:Gelin Evi|Gelsin Hayat Bildiği Gibi|Aşk Laftan Anlamaz|Fatih Harbiye|Yeni Gelin|Siyah Kalp|Rüya Gibi).{0,150}/gis);
+    matches.slice(0, 5).forEach((match, index) => {
+      const start = Math.max(0, match.index - 1200);
+      const end = Math.min(html.length, match.index + 1500);
 
-    if (matches) {
-      matches.slice(0, 30).forEach(item => console.log(item));
-      console.log("TOPLAM EŞLEŞME:", matches.length);
-    } else {
-      console.log("Program isimleri HTML içinde bulunamadı.");
-    }
+      console.log("\n========== PROGRAM", index + 1, "==========");
+      console.log(html.substring(start, end));
+    });
 
-    console.log("----------------------------------");
-    console.log("WEB SAYFASI TESTİ BAŞARILI");
+    console.log("\n========== TARİH VE SAAT İPUÇLARI ==========");
+
+    const keywords = ["2026-", "date", "time", "07:00", "09:00", "11:30"];
+
+    keywords.forEach(keyword => {
+      const index = html.indexOf(keyword);
+
+      if (index !== -1) {
+        console.log("\nİPUCU:", keyword);
+        console.log(html.substring(Math.max(0, index - 300), index + 500));
+      }
+    });
 
   } catch (error) {
     console.error("HATA:", error.message);
@@ -47,4 +49,4 @@ async function testShowmax() {
   }
 }
 
-testShowmax();
+inspectShowmax();
