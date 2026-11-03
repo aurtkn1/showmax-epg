@@ -1,0 +1,12 @@
+{
+  "name": "showmax-epg",
+  "version": "1.0.0",
+  "description": "Automatic Showmax EPG generator",
+  "main": "generate_showmax_epg.js",
+  "scripts": {
+    "start": "node generate_showmax_epg.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
+}
