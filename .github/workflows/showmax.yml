@@ -1,0 +1,26 @@
+
+name: Showmax EPG Test
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository Checkout
+        uses: actions/checkout@v4
+
+      - name: Node.js Setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Test Showmax API
+        run: node generate_showmax_epg.js
