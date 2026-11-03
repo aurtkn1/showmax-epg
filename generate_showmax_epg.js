@@ -6,46 +6,47 @@ const URL = "https://www.showmax.com.tr/yayin-akisi/";
 async function inspectShowmax() {
   try {
     const response = await axios.get(URL, {
-      headers: {
-        "User-Agent": "Mozilla/5.0"
-      },
+      headers: { "User-Agent": "Mozilla/5.0" },
       timeout: 30000
     });
 
     const html = response.data;
 
-    const tabs = [...html.matchAll(/tab-content/gi)];
+    console.log("SHOWMAX TARİH EŞLEŞTİRME TESTİ");
 
-    console.log("SHOWMAX YAYIN GÜNLERİ");
-    console.log("BULUNAN TAB SAYISI:", tabs.length);
+    const dates = [...new Set(
+      [...html.matchAll(/\b\d{2}\.\d{2}\.\d{4}\b/g)]
+        .map(m => m[0])
+    )];
 
-    for (let i = 0; i < tabs.length; i++) {
-      const start = tabs[i].index;
+    console.log("\nBULUNAN TARİHLER:");
+    dates.forEach((date, i) => {
+      console.log(i + 1, date);
+    });
+
+    const tabRegex = /<div\b[^>]*class="[^"]*\btab-content\b[^"]*"[^>]*>/gi;
+    const tabs = [...html.matchAll(tabRegex)];
+
+    console.log("\nYAYIN BÖLÜMÜ SAYISI:", tabs.length);
+
+    tabs.forEach((tab, i) => {
+      const start = tab.index;
       const end = i + 1 < tabs.length
         ? tabs[i + 1].index
         : html.length;
 
       const section = html.substring(start, end);
-      const before = html.substring(Math.max(0, start - 1800), start);
 
-      console.log("\n================================");
-      console.log("YAYIN BÖLÜMÜ:", i + 1);
-      console.log("================================");
-
-      console.log("BÖLÜM ÖNCESİ:");
-      console.log(before.slice(-1000));
-
-      const regex = /<span[^>]*>(\d{1,2}:\d{2})<\/span>\s*<span[^>]*>([\s\S]*?)<\/span>/gi;
+      const regex = /<span[^>]*>\s*(\d{1,2}:\d{2})\s*<\/span>\s*<span[^>]*>\s*([\s\S]*?)\s*<\/span>/gi;
 
       const programs = [...section.matchAll(regex)];
 
-      console.log("PROGRAM SAYISI:", programs.length);
-
-      programs.forEach(program => {
-        const name = program[2].replace(/<[^>]*>/g, "").trim();
-        console.log(program[1], "-", name);
+      console.log("\nBÖLÜM", i + 1);
+      programs.forEach(p => {
+        const name = p[2].replace(/<[^>]*>/g, "").trim();
+        console.log(p[1], "-", name);
       });
-    }
+    });
 
   } catch (error) {
     console.error("HATA:", error.message);
